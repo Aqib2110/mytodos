@@ -1,8 +1,10 @@
 const express = require('express');
-
+import cors from 'cors';
 const app = express();
 const PORT = 3000;
-
+app.use(cors({
+    origin: '*',
+}));
 const todos = Array.from({ length: 50 }, (_, i) => ({
     id: i + 1,
     title: `Todo ${i + 1}`,
